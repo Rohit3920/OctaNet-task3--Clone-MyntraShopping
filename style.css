@@ -156,4 +156,37 @@ nav.navbar .profile-content div p {
   to {
     opacity: 1;
   }
+}
+
+section {
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.139);
+}
+section h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  padding: 3em 1em 2em 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgb(78, 78, 78);
+}
+
+.ModelBrands .image-slideshow {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+.ModelBrands img {
+  width: 100%;
+}
+.ModelBrands .autoFade {
+  animation-name: autoFade;
+  animation-duration: 2s;
+}
+@keyframes autoFade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */

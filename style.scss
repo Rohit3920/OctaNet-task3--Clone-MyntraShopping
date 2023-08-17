@@ -6,13 +6,14 @@
 
 $primary: white;
 $font--size: 14px;
+$family: Arial, Helvetica, sans-serif;
 
 nav.navbar {
     width: 100%;
     height: 4em;
     background-color: $primary;
     border-bottom: 1px solid black;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $family;
 
     display: flex;
     flex-direction: row;
@@ -80,10 +81,6 @@ nav.navbar {
             padding: 8px;
             outline: none;
             border: none;
-
-            // &:focus + .searchBar{
-            //     background-color: white;
-            // }
         }
     }
 
@@ -108,8 +105,7 @@ nav.navbar {
 
 .slide-ads {
     width: 100%;
-height: fit-content;
-
+    height: fit-content;
 
     .slideshow-container {
         max-width: 100%;
@@ -181,6 +177,44 @@ height: fit-content;
     @keyframes fade {
         from {
             opacity: 0.4;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+$H1Color: rgb(78, 78, 78);
+
+section {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.139);
+
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        padding: 3em 1em 2em 1em;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        color: rgb(78, 78, 78);
+    }
+}
+
+.ModelBrands {
+    .image-slideshow {
+        max-width: 100%;
+        position: relative;
+        margin: auto;
+    }
+    img {
+        width: 100%;
+    }
+    .autoFade {
+        animation-name: autoFade;
+        animation-duration: 2s;
+    }
+    @keyframes autoFade {
+        from {
+            opacity: 0.5;
         }
         to {
             opacity: 1;

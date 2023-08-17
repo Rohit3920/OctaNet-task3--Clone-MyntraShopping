@@ -1,7 +1,6 @@
-console.warn("Octa Net -- Task 3")
-
-let slideIndex = 1;
-showSlides(slideIndex);
+// advertisement section slideShow
+let slideIndex = 0;
+showSlides();
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -11,18 +10,50 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-function showSlides(n) {
+function showSlides() {
     let i;
     let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
     slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 3000);
+}
+
+
+// ModelBrands section slideShow
+let index = 0;
+displayImages();
+function displayImages() {
+    let i;
+    const images = document.getElementsByClassName("image");
+    for (i = 0; i < images.length; i++) {
+        images[i].style.display = "none";
+    }
+    index++;
+    if (index > images.length) {
+        index = 1;
+    }
+    images[index - 1].style.display = "block";
+    setTimeout(displayImages, 5000);
+}
+
+
+// globalBrands section slideShow
+let ind = 0;
+displayGlobalImages();
+function displayGlobalImages() {
+    let i;
+    const images = document.getElementsByClassName("globalImage");
+    for (i = 0; i < images.length; i++) {
+        images[i].style.display = "none";
+    }
+    ind++;
+    if (ind > images.length) {
+        ind = 1;
+    }
+    images[ind - 1].style.display = "block";
+    setTimeout(displayGlobalImages, 4000);
 }
