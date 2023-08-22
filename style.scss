@@ -11,8 +11,10 @@ $family: Arial, Helvetica, sans-serif;
 nav.navbar {
     width: 100%;
     height: 4em;
+    position: fixed;
+    top: 0;
+    z-index: 1;
     background-color: $primary;
-    border-bottom: 1px solid black;
     font-family: $family;
 
     display: flex;
@@ -31,20 +33,19 @@ nav.navbar {
     ul {
         width: 50%;
         list-style-type: none;
-
         display: flex;
         flex-direction: row;
 
         li {
-            height: 100%;
+            height: 4em;
             display: flex;
             cursor: pointer;
-            padding: 0 0.5em;
+            padding: 1.5em 0.5em;
             justify-content: stretch;
-            align-items: stretch;
+            align-items: center;
 
             &:hover {
-                border-bottom: 2px solid orangered;
+                border-bottom: 4px solid orangered;
             }
 
             a {
@@ -100,10 +101,133 @@ nav.navbar {
             font-size: $font--size;
             word-spacing: 4px;
         }
+
+        div i {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.side-ads {
+    width: 10em;
+    position: fixed;
+    right: 25em;
+    // right: -7em;
+    top: 10em;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .ads-title {
+        width: 2em;
+        height: 380px;
+        background: radial-gradient(rgb(123, 123, 123), rgb(78, 78, 78));
+        color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column-reverse;
+        font-size: $family;
+
+        p {
+            transform: rotate(-90deg);
+            position: absolute;
+            top: 0.5em;
+            left: 1.2em;
+
+            height: 80px;
+        }
+
+        i {
+            position: absolute;
+            font-size: 30px;
+            transform: rotate(90deg);
+            left: -0.4em;
+
+
+            // transform: rotate(-90deg);
+            // left: 1.4em;
+
+
+            top: 0.5em;
+            height: 80px;
+        }
+
+        :first-child {
+            top: 280px;
+        }
+        :nth-child(2) {
+            top: 220px;
+        }
+        :nth-child(3) {
+            left: 1.6em;
+            top: 170px;
+        }
+    }
+
+    .ads-content {
+        background-color: rgb(250, 242, 230);
+        color: rgb(41, 55, 92);
+        max-height: 380px;
+        position: relative;
+        width: 35em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .content-1 {
+            :first-child {
+                margin: 2em 0 1em 1em;
+            }
+
+            :nth-child(2) {
+                margin: 0 0 1em 0.5em;
+                font-size: 3em;
+                text-transform: uppercase;
+            }
+            :nth-child(4) {
+                margin: 0 0 0 1.5em;
+            }
+        }
+
+        .content-2 {
+            img {
+                margin: 1em;
+            }
+
+            button {
+                text-transform: uppercase;
+                font-weight: 800;
+                margin: 0 2em;
+                padding: 1em;
+                background-color: rgb(255, 93, 120);
+                border: none;
+                border-radius: 4px;
+                color: white;
+            }
+        }
+
+        .ads-footer {
+            position: absolute;
+            top: 20em;
+            padding-top: 0.5em;
+            border-top: 1px dashed rgb(49, 146, 49);
+            ul {
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+
+                li {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 180px;
+                }
+            }
+        }
     }
 }
 
 .slide-ads {
+    margin-top: 4em;
     width: 100%;
     height: fit-content;
 
@@ -259,7 +383,7 @@ footer {
             text-transform: uppercase;
         }
 
-        img{
+        img {
             margin: 1em 0.5em;
         }
         ul {
@@ -267,7 +391,7 @@ footer {
             flex-direction: row;
 
             li {
-            list-style: none;
+                list-style: none;
                 padding: 4px;
 
                 i {
