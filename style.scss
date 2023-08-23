@@ -217,6 +217,33 @@ nav.navbar {
             }
         }
     }
+
+    .altNotification{
+        position: absolute;
+        top: 25em;
+        width: 2.5em;
+        height: 2.5em;
+        padding: 7px;
+        border: 2px solid  #0062ff;
+        border-radius: 50%;
+        animation-name: bellShake;
+        animation-duration: 1s;
+        // animation-delay: 2s;
+        animation-iteration-count: infinite;
+
+        i{
+            font-size: 1.5em;
+        }
+
+        @keyframes bellShake {
+            0%   { transform: rotate(10deg);}
+            20%  { transform: rotate(-10deg); box-shadow: 0 0 10px #0062ff;}
+            40%  { transform: rotate(10deg);}
+            60% { transform: rotate(-10deg);box-shadow: 0 0 10px #0062ff;}
+            80%  { transform: rotate(0deg);}
+            100%  { transform: rotate(0deg);}
+          }
+    }
 }
 
 .showAds{
@@ -225,6 +252,12 @@ nav.navbar {
     .hideAds i{
             transform: rotate(90deg);
             left: -0.4em;
+    }
+
+    .altNotification{
+        position: absolute;
+        left: 32em;
+        top: 25em;
     }
 }
 
