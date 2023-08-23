@@ -57,3 +57,15 @@ function displayGlobalImages() {
     images[ind - 1].style.display = "block";
     setTimeout(displayGlobalImages, 4000);
 }
+
+
+//side ads show/hide content
+const sideAds = document.querySelector("#sideAds")
+const titleAds = document.getElementById("titleAds");
+const contentAds = document.getElementById("contentAds")
+
+
+sideAds.addEventListener("click", ()=>{
+titleAds.classList.toggle("hideAds")
+sideAds.classList.toggle("showAds")
+})
